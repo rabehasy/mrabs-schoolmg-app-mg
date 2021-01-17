@@ -37,6 +37,11 @@ RUN docker-php-ext-install json calendar intl
 RUN docker-php-ext-install zip
 
 # ----------------------
+# EXIF
+# ----------------------
+RUN docker-php-ext-install exif && docker-php-ext-enable exif
+
+# ----------------------
 # Composer
 # ----------------------
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
